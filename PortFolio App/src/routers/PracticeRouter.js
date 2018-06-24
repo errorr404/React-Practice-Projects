@@ -42,16 +42,20 @@ const Faculty = ()=>(
 const Feecheck = (props)=>(
   <p>Here is the fee of {props.match.params.id}</p>
 );
+const NotFoundPage = ()=>(
+  <h1>error404 <Link to="/">Go Home</Link></h1>
+);
 
 const AppRouter1 = ()=>(
   <BrowserRouter>
     <div>
     <Header />
-     <Switch>
+     <Switch> 
        <Route path="/" component={Home} exact={true}/>
        <Route path="/fee" component={Fees} exact={true}/>
        <Route path="/faculty" component={Faculty}/>
        <Route path="/fee/:id" component={Feecheck}/>
+       <Route component={NotFoundPage}/>
      </Switch>
     </div>
 
